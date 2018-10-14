@@ -160,5 +160,7 @@
       <Name>Sales</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\noproduct.png" />
+  </ItemGroup>
 </Project>

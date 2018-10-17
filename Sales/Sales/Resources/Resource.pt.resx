@@ -147,4 +147,10 @@
   <data name="PricePlaceholder" xml:space="preserve">
     <value>Insira Preço de Produto</value>
   </data>
+  <data name="Remarks" xml:space="preserve">
+    <value> Comentários:  </value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
 </root>

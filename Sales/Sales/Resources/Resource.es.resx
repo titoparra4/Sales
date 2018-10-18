@@ -156,4 +156,7 @@ Notas:
   <data name="Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Toca la imagen para cambiarla.</value>
+  </data>
 </root>

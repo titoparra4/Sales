@@ -10,6 +10,14 @@
             BindingContext="{Binding AddProduct}">
             <StackLayout
             Padding="5">
+                <Image
+                    Source="noproduct">                    
+                </Image>
+                <Label
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    Text="{i18n:Translate ChangeImage}">                    
+                </Label>
                 <Label
                 Text="{i18n:Translate Description}">
                 </Label>

@@ -73,7 +73,9 @@
                 <Button
                     BackgroundColor="Navy"
                     BorderRadius="23"
+                    Command="{Binding SaveCommand}"
                     HeightRequest="46"
+                    IsEnabled="{Binding IsEnabled}"
                     Text="{i18n:Translate Save}"
                     TextColor="White">
                 </Button>

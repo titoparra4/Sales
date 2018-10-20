@@ -15,6 +15,8 @@ namespace Sales.ViewModels
     {
         #region Attributes
 
+        private ImageSource imageSource;
+
         private ApiService apiService;
 
         private bool isRunning;
@@ -43,6 +45,12 @@ namespace Sales.ViewModels
             set { this.SetValue(ref this.isEnabled, value); }
         }
 
+        public ImageSource ImageSource
+        {
+            get { return this.imageSource; }
+            set { this.SetValue(ref this.imageSource, value); }
+        }
+
         #endregion
 
         #region Constructors
@@ -51,6 +59,7 @@ namespace Sales.ViewModels
         {
             this.apiService = new ApiService();
             this.IsEnabled = true;
+            this.ImageSource = "noproduct";
         }
 
         #endregion
@@ -97,13 +106,13 @@ namespace Sales.ViewModels
                 return;
             }
 
-            this.isRunning = true;
+            this.IsRunning = true;
             this.IsEnabled = false;
 
             var connection = await this.apiService.CheckConnection();
             if (!connection.IsSuccess)
             {
-                this.isRunning = false;
+                this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error, 
@@ -126,7 +135,7 @@ namespace Sales.ViewModels
 
             if (!response.IsSuccess)
             {
-                this.isRunning = false;
+                this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
@@ -140,7 +149,7 @@ namespace Sales.ViewModels
             viewModel.Products.Add(newProduct);
             
 
-            this.isRunning = false;
+            this.IsRunning = false;
             this.IsEnabled = true;
             await Application.Current.MainPage.Navigation.PopAsync();
         }

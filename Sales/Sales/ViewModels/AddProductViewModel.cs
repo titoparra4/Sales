@@ -8,12 +8,14 @@ using Xamarin.Forms;
 using Sales.Services;
 using Sales.Common.Models;
 using System.Linq;
+using Plugin.Media.Abstractions;
 
 namespace Sales.ViewModels
 {
     public class AddProductViewModel : BaseViewModel
     {
         #region Attributes
+        private MediaFile file;
 
         private ImageSource imageSource;
 

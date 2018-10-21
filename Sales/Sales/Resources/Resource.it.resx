@@ -192,4 +192,7 @@ Note:
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
 </root>

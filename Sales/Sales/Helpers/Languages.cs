@@ -133,6 +133,11 @@ namespace Sales.Helpers
             get { return Resource.No; }
         }
 
+        public static string Confirm
+        {
+            get { return Resource.Confirm; }
+        }
+
     }
 
 }

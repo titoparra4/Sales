@@ -26,6 +26,7 @@ namespace Sales.Droid
             LoadApplication(new App());
         }
 
+
         public override void OnRequestPermissionsResult(
             int requestCode,
             string[] permissions,

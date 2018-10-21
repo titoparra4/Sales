@@ -2,6 +2,8 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Product
     {
         [Key]
@@ -28,6 +30,10 @@
         [DataType(DataType.Date)]
         public DateTime PublishOn { get; set; }
 
+        [NotMapped]
+        public byte[] ImageArray { get; set; }
+
+    
         public string ImageFullPath
         {
             get
@@ -37,7 +43,7 @@
                     return "noproduct";
                 }
 
-                return $"http://salesbackendtito.azurewebsites.net/{this.ImagePath.Substring(1)}";
+                return $"http://salesapitito.azurewebsites.net/{this.ImagePath.Substring(1)}";
             }
         
         }

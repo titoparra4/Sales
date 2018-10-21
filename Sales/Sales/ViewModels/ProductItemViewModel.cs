@@ -7,6 +7,7 @@ using System.Windows.Input;
 using Sales.Services;
 using Xamarin.Forms;
 using Sales.Helpers;
+using System.Linq;
 
 namespace Sales.ViewModels
 {
@@ -56,6 +57,22 @@ namespace Sales.ViewModels
                 return;
             }
 
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlProductsController"].ToString();
+            var response = await this.apiService.Delete(url, prefix, controller, this.ProductId);
+            if (!response.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
+                return;
+            }
+
+            var productsViewModel = ProductsViewModel.GetInstance();
+            var deleteProduct = productsViewModel.Products.Where(p => p.ProductId == this.ProductId).FirstOrDefault();
+            if(deleteProduct != null)
+            {
+                productsViewModel.Products.Remove(deleteProduct);
+            }
 
         }
         #endregion

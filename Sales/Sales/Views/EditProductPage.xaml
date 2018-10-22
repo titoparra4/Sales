@@ -41,7 +41,7 @@
                     <Entry
                         Grid.Column="1"
                         Grid.Row="0"
-                        Text="{Binding Description}"
+                        Text="{Binding Product.Description}"
                         Placeholder="{i18n:Translate DescriptionPlaceholder}">
                     </Entry>
                     <Label
@@ -54,7 +54,7 @@
                         Grid.Column="1"
                         Grid.Row="1"
                         Keyboard="Numeric"
-                        Text="{Binding Price}"
+                        Text="{Binding Product.Price}"
                         Placeholder="{i18n:Translate PricePlaceholder}">
                     </Entry>
                     <Label
@@ -66,9 +66,21 @@
                     <Editor
                         Grid.Column="1"
                         Grid.Row="2"
-                        Text="{Binding Remarks}"
+                        Text="{Binding Product.Remarks}"
                         VerticalOptions="FillAndExpand">
                     </Editor>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Text="{i18n:Translate IsAvailable}"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        HorizontalOptions="End"
+                        IsToggled="{Binding Product.IsAvailable}">
+                    </Switch>
                 </Grid>
                 <ActivityIndicator
                     IsRunning="{Binding IsRunning}"

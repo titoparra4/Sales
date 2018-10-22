@@ -19,8 +19,25 @@ namespace Sales.ViewModels
         #region Constructors
         public MainViewModel()
         {
+            instance = this;
             this.Products = new ProductsViewModel();
         }
+        #endregion
+
+        #region Singleton
+
+        private static MainViewModel instance;
+
+        public static MainViewModel GetInstance()
+        {
+            if (instance == null)
+            {
+                return new MainViewModel();
+            }
+
+            return instance;
+        }
+
         #endregion
 
         #region Commands

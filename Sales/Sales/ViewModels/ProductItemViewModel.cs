@@ -8,6 +8,7 @@ using Sales.Services;
 using Xamarin.Forms;
 using Sales.Helpers;
 using System.Linq;
+using Sales.Views;
 
 namespace Sales.ViewModels
 {
@@ -29,6 +30,20 @@ namespace Sales.ViewModels
         #endregion
 
         #region Commands
+
+        public ICommand EditProductCommand
+        {
+            get
+            {
+                return new RelayCommand(EditProduct);
+            }
+        }
+
+        private async void EditProduct()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
+        }
+
         public ICommand DeleteProductCommand
         {
             get

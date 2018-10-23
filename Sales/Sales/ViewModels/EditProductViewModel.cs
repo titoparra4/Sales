@@ -6,6 +6,7 @@ using Sales.Helpers;
 using Sales.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -167,12 +168,13 @@ namespace Sales.ViewModels
             if (this.file != null)
             {
                 imageArray = FilesHelper.ReadFully(this.file.GetStream());
+                this.Product.ImageArray = imageArray;
             }
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            var response = await this.apiService.Post<Product>(url, prefix, controller, product);
+            var response = await this.apiService.Put<Product>(url, prefix, controller, this.Product, this.Product.ProductId);
 
             if (!response.IsSuccess)
             {
@@ -187,6 +189,13 @@ namespace Sales.ViewModels
 
             var newProduct = (Product)response.Result;
             var productsViewModel = ProductsViewModel.GetInstance();
+            var oldProduct = productsViewModel.MyProducts.Where(p => p.ProductId == this.Product.ProductId).FirstOrDefault();
+            if (oldProduct != null)
+            {
+                productsViewModel.MyProducts.Remove(oldProduct);
+            }
+
+
             productsViewModel.MyProducts.Add(newProduct);
             productsViewModel.RefreshList();
 

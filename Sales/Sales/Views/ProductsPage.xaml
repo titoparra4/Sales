@@ -28,8 +28,9 @@
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Image
                                     Grid.Column="0"
@@ -53,6 +54,11 @@
                                     Text="{Binding Price, StringFormat='{0:C0}'}"
                                     VerticalOptions="Center">
                                 </Label>
+                                <Image
+                                    Grid.Column="3"
+                                    Source="ic_chevron_right"
+                                    VerticalOptions="Center">
+                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

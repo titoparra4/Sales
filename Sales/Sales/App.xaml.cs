@@ -7,14 +7,27 @@ namespace Sales
 {
     using Views;
     using Sales.ViewModels;
-	public partial class App : Application
+    using Sales.Helpers;
+
+    public partial class App : Application
 	{
-		public App ()
+        public static NavigationPage Navigator { get; internal set; }
+
+        public App ()
 		{
 			InitializeComponent();
 
-            MainViewModel.GetInstance().Login = new LoginViewModel(); 
-			MainPage = new NavigationPage(new LoginPage());
+            if (Settings.IsRemembered && !string.IsNullOrEmpty(Settings.AccessToken))
+            {
+                MainViewModel.GetInstance().Products = new ProductsViewModel();
+                MainPage = new NavigationPage(new MasterPage());
+            }
+            else
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+                MainPage = new NavigationPage(new LoginPage());
+            }
+
 		}
 
 		protected override void OnStart ()

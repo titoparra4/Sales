@@ -20,7 +20,7 @@ namespace Sales
             if (Settings.IsRemembered && !string.IsNullOrEmpty(Settings.AccessToken))
             {
                 MainViewModel.GetInstance().Products = new ProductsViewModel();
-                MainPage = new NavigationPage(new MasterPage());
+                MainPage = new MasterPage();
             }
             else
             {

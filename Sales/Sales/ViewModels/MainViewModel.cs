@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Sales.Common.Models;
 using Sales.Helpers;
 using Sales.Views;
 using System;
@@ -18,6 +19,8 @@ namespace Sales.ViewModels
         public ProductsViewModel Products { get; set; }
 
         public AddProductViewModel AddProduct { get; set; }
+
+        public MyUserASP UserASP { get; set; }
 
         public RegisterViewModel Register { get; set; }
 

@@ -16,6 +16,9 @@
 	            WidthRequest="200"
 	            HeightRequest="200">
             </controls:CircleImage>
+            <!--<Image
+                Source="{Binding UserImageFullPath}">                
+            </Image>-->
             <Label
 	            FontAttributes="Bold"
 	            FontSize="Large"

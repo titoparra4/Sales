@@ -12,7 +12,7 @@
             	Padding="5">
                 <Image
                 	HeightRequest="150"
-                	Source="if_Home">
+                	Source="if_home.png">
                 </Image>
                 <Grid
                 	Margin="10,0"

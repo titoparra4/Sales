@@ -2342,26 +2342,26 @@ namespace Sales.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02013c
-			public const int avd_hide_password_1 = 2130837820;
-			
 			// aapt resource value: 0x7f02013d
-			public const int avd_hide_password_2 = 2130837821;
+			public const int avd_hide_password_1 = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int avd_hide_password_3 = 2130837822;
+			public const int avd_hide_password_2 = 2130837822;
+			
+			// aapt resource value: 0x7f02013f
+			public const int avd_hide_password_3 = 2130837823;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02013f
-			public const int avd_show_password_1 = 2130837823;
-			
 			// aapt resource value: 0x7f020140
-			public const int avd_show_password_2 = 2130837824;
+			public const int avd_show_password_1 = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int avd_show_password_3 = 2130837825;
+			public const int avd_show_password_2 = 2130837825;
+			
+			// aapt resource value: 0x7f020142
+			public const int avd_show_password_3 = 2130837826;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2934,7 +2934,7 @@ namespace Sales.Droid
 			public const int if_facebook = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int if_Home = 2130837779;
+			public const int if_home = 2130837779;
 			
 			// aapt resource value: 0x7f020114
 			public const int if_instagram = 2130837780;
@@ -3032,11 +3032,11 @@ namespace Sales.Droid
 			// aapt resource value: 0x7f020133
 			public const int notification_icon_background = 2130837811;
 			
-			// aapt resource value: 0x7f02013a
-			public const int notification_template_icon_bg = 2130837818;
-			
 			// aapt resource value: 0x7f02013b
-			public const int notification_template_icon_low_bg = 2130837819;
+			public const int notification_template_icon_bg = 2130837819;
+			
+			// aapt resource value: 0x7f02013c
+			public const int notification_template_icon_low_bg = 2130837820;
 			
 			// aapt resource value: 0x7f020134
 			public const int notification_tile_bg = 2130837812;
@@ -3055,6 +3055,9 @@ namespace Sales.Droid
 			
 			// aapt resource value: 0x7f020139
 			public const int tooltip_frame_light = 2130837817;
+			
+			// aapt resource value: 0x7f02013a
+			public const int web_hi_res_512 = 2130837818;
 			
 			static Drawable()
 			{
